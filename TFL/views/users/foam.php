@@ -13,6 +13,7 @@
                     extend: {
                     colors: {
                         clifford: '#da373d',
+                        bossd: '#FFE6A9',
                     }
                     }
                 }
@@ -22,8 +23,8 @@
         </head>
         <body class="h-screen">
             <form>
-                <div class=" w-full flex justify-center rounded border">
-                    <div class="w-full min-h-screen h-auto p-5 md:w-1/2 ">
+                <div class="bg-[url('../../assets/image/10.png')] bg-cover w-full flex justify-center rounded border">
+                    <div class="w-full min-h-screen font-serif bg-opacity-90 bg-bossd h-auto p-5 md:w-1/2 ">
                         <div class="flex justify-center">
                             <img src="../../assets/image/tfl_logo.png" class="h-[100px] w-auto md:h-[200px]">
                         </div>
@@ -62,49 +63,53 @@
                     
                         <div class="my-1">
                             <div id="walletRows">
-                                <div class="grid grid-cols-2 gap-4 mt-3 mb-5 md:grid-cols-4 text-center">
-                                    <div id="dynamicRows1">
-                                        <div>
-                                            <label>ITEM</label>
-                                            <input type="number" class="rounded border w-full p-1" min="0" placeholder="₱(wallet)">
-                                            <input type="text" class="rounded border w-full p-1 mt-5"/>
-                                        </div>
-                                        <div>
-                                            <label>QUANTITY</label>
-                                            <input type="number" class="rounded border w-full p-1" min="0" id="numberInput"/>
-                                            <input type="number" class="rounded border w-full p-1 mt-5" min="0" id="numberInput"/>
-                                        </div>
+                                <div class="grid grid-cols-2 gap-4 mt-3 mb-5 md:grid-cols-4 text-center border-2 border-black p-2 rounded-md">
+                                    <div>
+                                        <label>ITEM</label>
+                                        <input type="number" class="rounded border w-full p-1" min="0" placeholder="₱(Wallet)">
                                     </div>
-                                    <div id="dynamicRows1">
-                                        <div>
-                                            <label>BRAND</label>
-                                            <input type="text" class="rounded border w-full p-1">
-                                            <input type="text" class="rounded border w-full p-1 mt-5"/>
-                                        </div>
-                                        <div>
-                                            <label>COLOR</label>
-                                            <input type="text" class="rounded border w-full p-1">
-                                            <input type="text" class="rounded border w-full p-1 mt-5"/>
-                                        </div>
+                                    <div>
+                                        <label>QUANTITY</label>
+                                        <input type="number" class="rounded border w-full p-1" min="0" id="numberInput"/>
+                                    </div>
+                                    <div>
+                                        <label>BRAND</label>
+                                        <input type="text" class="rounded border w-full p-1">
+                                    </div>
+                                    <div>
+                                        <label>COLOR</label>
+                                        <input type="text" class="rounded border w-full p-1">
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="my-1">
                             <div id="dynamicRows">
-                                <div class="grid grid-cols-2 gap-4 mt-3 mb-5 md:grid-cols-4">
-                                    <input type="text" class="rounded border w-full p-1"/>
-                                    <input type="number" class="rounded border w-full p-1" min="0" id="numberInput"/>
-                                    <input type="text" class="rounded border w-full p-1"/>
-                                    <input type="text" class="rounded border w-full p-1"/>
+                                <div class="grid grid-cols-2 gap-4 mt-3 mb-5 md:grid-cols-4 text-center border-2 border-black p-2 rounded-md">
+                                    <div>
+                                        <label>ITEM</label>
+                                        <input type="text" class="rounded border w-full p-1">
+                                    </div>
+                                    <div>
+                                        <label>QUANTITY</label>
+                                        <input type="number" class="rounded border w-full p-1" min="0" id="numberInput"/>
+                                    </div>
+                                    <div>
+                                        <label>BRAND</label>
+                                        <input type="text" class="rounded border w-full p-1">
+                                    </div>
+                                    <div>
+                                        <label>COLOR</label>
+                                        <input type="text" class="rounded border w-full p-1">
+                                    </div>
                                 </div>
                             </div>
                             <div class="my-4 flex justify-between">
-                                <button type="button" id="addRow" class="bg-blue-500 text-white p-2 rounded">Add Row</button>
-                                <button type="button" id="removeRow" class="bg-red-500 text-white p-2 rounded" disabled>Remove Row</button>
+                                <button type="button" id="addRow" class="bg-blue-500 text-white p-3 rounded">Add Row</button>
+                                <button type="button" id="removeRow" class="bg-red-500 text-white p-3 rounded" disabled>Remove Row</button>
                             </div>
                             <div class="flex justify-center">
-                                <button type="submit" class="bg-lime-600 text-white p-2 rounded my-5">Submit</button>
+                                <button type="submit" class="bg-lime-600 text-white p-3 rounded my-5">Submit</button>
                             </div>
                         </div>
                     </div>
@@ -120,12 +125,24 @@
                 document.getElementById('addRow').addEventListener('click', function() {
                     const dynamicRows = document.getElementById('dynamicRows');
                     const newRow = document.createElement('div');
-                    newRow.classList.add('grid', 'grid-cols-4', 'gap-4', 'my-5');
+                    newRow.classList.add('grid', 'grid-cols-2', 'gap-4', 'mt-3', 'mb-5', 'text-center', 'border-2', 'border-black', 'p-2', 'rounded-md');
                     newRow.innerHTML = `
-                        <input type="text" class="border w-full p-1"/>
-                        <input type="number" class="border w-full p-1" min="0" />
-                        <input type="text" class="border w-full p-1"/>
-                        <input type="text" class="border w-full p-1"/>
+                        <div>
+                            <label>ITEM</label>
+                            <input type="text" class="rounded border w-full p-1">
+                        </div>
+                        <div>
+                            <label>QUANTITY</label>
+                            <input type="number" class="rounded border w-full p-1" min="0" id="numberInput"/>
+                        </div>
+                        <div>
+                            <label>BRAND</label>
+                            <input type="text" class="rounded border w-full p-1">
+                        </div>
+                        <div>
+                            <label>COLOR</label>
+                            <input type="text" class="rounded border w-full p-1">
+                        </div>
                     `;
                     dynamicRows.appendChild(newRow);
                     document.getElementById('removeRow').disabled = false;
